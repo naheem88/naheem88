@@ -26,25 +26,19 @@ body {
     padding-inline-start: 0.4rem;
 }
 
-.timerIcon {
-    width: 1.4rem;
-    height: 1.4rem;
-}
-
 #closeIcon {
     margin: 0.1rem 1rem 1rem 5.2rem;
     position: absolute;
     width: 1.4rem;
     height: 1.4rem;
-    float: right;
 }
 
-.question {
+.question, div#instructions, #questions, div#userResults, .answerButtons {
     border: 1px solid white;
     border-radius: 1rem;
 }
 
-#timer {
+#timer, #closeIcon {
     float: right;
 }
 
@@ -61,10 +55,8 @@ div#instructions {
 
 div#instructions, #questions, div#userResults {
     background-color: rgb(15, 113, 232);
-    border-radius: 1rem;
     padding: 1rem;
-    border: 1px solid white;
-    margin: 4rem 2rem 2rem 2rem;
+    margin: 4rem 1rem;
 }
 
 div#questions, #userResults {
@@ -98,9 +90,6 @@ div#userResults {
 }
 
 .answerButtons {
-    border: 1px solid white;
-    border-radius: 1rem;
-    gap: 2rem;
     height: 10rem;
 }
 
@@ -109,27 +98,27 @@ div#userResults {
     grid-template-columns: 1fr 1fr;
     margin-top: 1rem;
     padding: 1rem;
-    gap: 1.1rem;
+    gap: 2rem;
     min-width: 8.9rem;
 }
 
 .answerButtons input, .guideButtons input {
     background-color: rgb(15, 113, 232);
-    border: 1px solid white;
-    border-radius: 0.8rem;
     width: auto;
     max-width: 19rem;
-    color: lightblue;
 }
 
 #startBtn {
     background-color: rgb(7, 48, 98);
+    min-width: 17rem;
+    padding: 0.2rem;
+    height: 3rem;
+}
+
+.answerButtons input, .guideButtons input, #startBtn {
     border: 1px solid white;
     border-radius: 0.8rem;
     color: lightblue;
-    min-width: 18rem;
-    padding: 0.2rem;
-    height: 3rem;
 }
 
 .guideButtons input {
@@ -170,17 +159,11 @@ input:focus {
 }
 
 @media only screen and (min-width: 402px) {
-    .answerButtons {
-        height: 10rem;
-    }
-
     div#instructions {
-        display: grid;
         line-height: 2.4rem;
-        font-size: 0.9rem;
     }
 
-    div#questions {
+    div#instructions, div#questions {
         font-size: 0.9rem;
     }
 
@@ -203,5 +186,3 @@ input:focus {
         line-height: 2.8rem;
     }
 }
-
-
