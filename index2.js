@@ -11,16 +11,16 @@ const correctAnsID = ["q1Ans1", "q2Ans2", "q3Ans3", "q4Ans4", "q5Ans2", "q6Ans4"
 const nextqnBtnIDArray = ["nextQnBtn1", "nextQnBtn2", "nextQnBtn3", "nextQnBtn4", "nextQnBtn5", "nextQnBtn6", "nextQnBtn7", "nextQnBtn8", "nextQnBtn9", "nextQnBtn10"];
 
 const questionBackgroundImages = [];
-questionBackgroundImages[0] = "url(/CW/Images/footballImage.jpg)";
-questionBackgroundImages[1] = "url(/CW/Images/footballImage.jpg)";
-questionBackgroundImages[2] = "url(/CW/Images/footballImage.jpg)";
-questionBackgroundImages[3] = "url(/CW/Images/footballImage.jpg)";
-questionBackgroundImages[4] = "url(/CW/Images/footballImage.jpg)";
-questionBackgroundImages[5] = "url(/CW/Images/footballImage.jpg)";
-questionBackgroundImages[6] = "url(/CW/Images/footballImage.jpg)";
-questionBackgroundImages[7] = "url(/CW/Images/footballImage.jpg)";
-questionBackgroundImages[8] = "url(/CW/Images/footballImage.jpg)";
-questionBackgroundImages[9] = "url(/CW/Images/footballImage.jpg)";
+questionBackgroundImages[0] = "url(/Images/footballImage.jpg)";
+questionBackgroundImages[1] = "url(/Images/footballImage.jpg)";
+questionBackgroundImages[2] = "url/Images/footballImage.jpg)";
+questionBackgroundImages[3] = "url(/Images/footballImage.jpg)";
+questionBackgroundImages[4] = "url(/Images/footballImage.jpg)";
+questionBackgroundImages[5] = "url(/Images/footballImage.jpg)";
+questionBackgroundImages[6] = "url(/Images/footballImage.jpg)";
+questionBackgroundImages[7] = "url(/Images/footballImage.jpg)";
+questionBackgroundImages[8] = "url(/Images/footballImage.jpg)";
+questionBackgroundImages[9] = "url(/Images/footballImage.jpg)";
 
 let scoreCount = 0;
 let userAnsID = "";
