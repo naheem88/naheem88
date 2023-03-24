@@ -1,0 +1,207 @@
+/*Name: Thuan Naheem Pakeer
+UoW Number: w1953854
+IIT Student Number: 20210627*/
+
+* {
+    margin: 0%;
+    margin-top: 0.8%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    color: white;
+}
+
+#instructionsHeading {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.questionNumber {
+    text-align: left;
+    padding-inline-start: 0.4rem;
+}
+
+.timerIcon {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+#closeIcon {
+    margin: 0.1rem 1rem 1rem 5.2rem;
+    position: absolute;
+    width: 1.4rem;
+    height: 1.4rem;
+    float: right;
+}
+
+.question {
+    border: 1px solid white;
+    border-radius: 1rem;
+}
+
+#timer {
+    float: right;
+}
+
+div#instructions {
+    display: grid;
+    text-align: left;
+    line-height: 2rem;
+    font-size: 0.7rem;
+    min-width: 19.4rem;
+    max-width: 36rem;
+    min-height: 26rem;
+    max-height: 24rem;
+}
+
+div#instructions, #questions, div#userResults {
+    background-color: rgb(15, 113, 232);
+    border-radius: 1rem;
+    padding: 1rem;
+    border: 1px solid white;
+    margin: 4rem 2rem 2rem 2rem;
+}
+
+div#questions, #userResults {
+    gap: 1rem;
+    line-height: 2rem;
+    min-height: 28rem;
+}
+
+div#questions {
+    max-width: 44rem;
+    font-size: 0.7rem;
+}
+
+div#userResults {
+    width: 21rem;
+    padding: 2rem;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+#result {
+    margin-top: 2.8rem;
+}
+
+#sadEmoji, #smileyEmoji, #starEmoji {
+    width: 10rem;
+    height: 10rem;
+    margin: auto;
+    margin-top: 1rem;
+    display: none;
+}
+
+.answerButtons {
+    border: 1px solid white;
+    border-radius: 1rem;
+    gap: 2rem;
+    height: 10rem;
+}
+
+.answerButtons, .guideButtons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1rem;
+    padding: 1rem;
+    gap: 1.1rem;
+    min-width: 8.9rem;
+}
+
+.answerButtons input, .guideButtons input {
+    background-color: rgb(15, 113, 232);
+    border: 1px solid white;
+    border-radius: 0.8rem;
+    width: auto;
+    max-width: 19rem;
+    color: lightblue;
+}
+
+#startBtn {
+    background-color: rgb(7, 48, 98);
+    border: 1px solid white;
+    border-radius: 0.8rem;
+    color: lightblue;
+    min-width: 18rem;
+    padding: 0.2rem;
+    height: 3rem;
+}
+
+.guideButtons input {
+    background-color: rgb(7, 48, 98);
+    height: 4rem;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.setTextColorToGold {
+    color: gold;
+}
+
+.setTextColorToRed {
+    color: red;
+}
+
+.setTextColorToGreen {
+    color: darkgreen;
+}
+
+.setTextColorToGold, .setTextColorToRed, .setTextColorToGreen {
+    font-size: 1rem;
+}
+
+input:hover {
+    opacity: 0.6;
+}
+
+input:focus {
+    background-color:  rgb(85, 85, 196, 0.8);
+}
+
+@media only screen and (min-width: 402px) {
+    .answerButtons {
+        height: 10rem;
+    }
+
+    div#instructions {
+        display: grid;
+        line-height: 2.4rem;
+        font-size: 0.9rem;
+    }
+
+    div#questions {
+        font-size: 0.9rem;
+    }
+
+    #instructionsHeading {
+        font-size: 1.8rem;
+    }
+
+    .setTextColorToGold, .setTextColorToRed, .setTextColorToGreen {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 650px) {  
+    div#instructions, div#questions, div#userResults {
+        margin: auto;
+        margin-top: 4rem;
+    }
+
+    div#instructions, div#questions {
+        line-height: 2.8rem;
+    }
+}
+
+
