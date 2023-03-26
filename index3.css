@@ -84,7 +84,7 @@ div#questions, #userResults {
 }
 
 div#questions {
-    background-image: url("/CW/Images/concertImage.jpg");
+    background-image: url("Images/concertImage.jpg");
     max-width: 44rem;
     font-size: 0.7rem;
     font-weight: bold;
