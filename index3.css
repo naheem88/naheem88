@@ -27,7 +27,7 @@ body {
 }
 
 #timer, .questionNumber, .question {
-    color: rgb(197, 197, 31);
+    color: rgb(194, 194, 30);
     font-weight: bolder;
 }
 
@@ -84,7 +84,6 @@ div#questions, #userResults {
 }
 
 div#questions {
-    background-image: url("/Images/concertImage.jpg");
     max-width: 44rem;
     font-size: 0.7rem;
     font-weight: bold;
@@ -116,7 +115,7 @@ div#userResults {
     height: 10rem;
 }
 
-.answerButtons, .guideButtons{
+.answerButtons {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 0.4rem;
@@ -125,7 +124,7 @@ div#userResults {
     min-width: 8.9rem;
 }
 
-.answerButtons input, .guideButtons input {
+.answerButtons input {
     background-color: rgb(95, 158, 160, 0.7);
     border: 1px solid white;
     border-radius: 0.8rem;
@@ -144,9 +143,15 @@ div#userResults {
     height: 3rem;
 }
 
-.guideButtons input {
+.guideButton input {
+    border: 1px solid white;
+    border-radius: 0.8rem;
+    color: white;
+    margin-top: 2rem;
     background-color: rgb(7, 48, 98);
     height: 4rem;
+    min-width: 18rem;
+    width: auto;
 }
 
 .hide {
@@ -214,5 +219,3 @@ input:focus {
         line-height: 2.8rem;
     }
 }
-
-
