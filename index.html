@@ -16,152 +16,133 @@
         <hr>
         <div id = "instructions">
             <p id = "instructionsHeading"><strong>INSTRUCTIONS</strong></p>
-            <p>1. Once <strong>CONFIRMED</strong> your answer cannot be changed.</p>
-            <p>2. You have <strong>1 minute</strong> to complete this quiz.</p>
-            <p>3. <strong class = "setTextColorToGreen">Green </strong> means the answer is <strong>right</strong> while <strong class = "setTextColorToRed">Red</strong> means <strong>wrong</strong>.</p>
+            <p>1. Once press <strong>NEXT QUESTION</strong> your answer cannot be changed.</p>
+            <p>2. You have <strong>2 minutes</strong> to complete this quiz.</p>
+            <p>3. <strong class = "setTextColorToGreen">GREEN </strong> means the answer is <strong>right</strong> while <strong class = "setTextColorToRed">RED</strong> means <strong>wrong</strong>.</p>
             <p>4. Most importantly, remember to have <strong>fun!</strong></p>
             <input type="button" name="startButton" value="Start Quiz" id = "startBtn" onclick="startQuiz()">
         </div>
         <div id ="questions" class = "hide">
             <p id = "timer"></p>
-            <div id="qn1">
-                <p class = "questionNumber">Question 1/10</p>
+            <p class = "questionNumber">Question <span id = "questionNumber"></span>/10</p>
+            <div id="qn1" class="hide">
                 <p class = "question">Which of the following singers have an upcoming concert tour this <em>summer</em>?</p>
                 <div class = "answerButtons">
-                    <input type ="button" name="question1" value="Charlie Puth" id = "q1Ans1" onclick="getValue(this.id)">
-                    <input type ="button" name="question1" value="Ed Sheeran" id = "q1Ans2" onclick="getValue(this.id)"> 
-                    <input type ="button" name="question1" value="Ariana Grande" id = "q1Ans3" onclick="getValue(this.id)">
-                    <input type ="button" name="question1" value="ZAYN" id = "q1Ans4" onclick="getValue(this.id)">
+                    <input type ="button" name="question1" value="Charlie Puth" id = "q1Ans1" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question1" value="Ed Sheeran" id = "q1Ans2" onclick="getUserInput(this.id)"> 
+                    <input type ="button" name="question1" value="Ariana Grande" id = "q1Ans3" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question1" value="ZAYN" id = "q1Ans4" onclick="getUserInput(this.id)">
                 </div>    
-                <div class = "guideButtons"> 
-                    <input type ="button" name="question1" value="Confirm Answer" id = "confirmBtn1" onclick="confirmAns(this.id, 0)">
-                    <input type ="button" name="question1" value="Next Question" id = "nextQnBtn1" disabled onclick="nextQuestion(0)">
+                <div class = "guideButton"> 
+                    <input type ="button" name="question1" value="Next Question" onclick="handleAnswer()">
                 </div>
             </div>
             <div id="qn2" class="hide">
-                <p class = "questionNumber">Question 2/10</p>
                 <p class = "question">Which country will be the <em>primary</em> host of the <em>women's FIFA world cup this year</em>?</p>
                 <div class = "answerButtons">
-                    <input type ="button" name="question2" value="New Zealand" id = "q2Ans1" onclick="getValue(this.id)">
-                    <input type ="button" name="question2" value="Australia" id = "q2Ans2" onclick="getValue(this.id)"> 
-                    <input type ="button" name="question2" value="Canada" id = "q2Ans3" onclick="getValue(this.id)">
-                    <input type ="button" name="question2" value="Qatar" id = "q2Ans4" onclick="getValue(this.id)">
+                    <input type ="button" name="question2" value="New Zealand" id = "q2Ans1" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question2" value="Australia" id = "q2Ans2" onclick="getUserInput(this.id)"> 
+                    <input type ="button" name="question2" value="Canada" id = "q2Ans3" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question2" value="Qatar" id = "q2Ans4" onclick="getUserInput(this.id)">
                 </div>
-                <div class = "guideButtons">
-                    <input type ="button" name="question2" value="Confirm Answer" id = "confirmBtn2" onclick="confirmAns(this.id, 1)">
-                    <input type ="button" name="question2" value="Next Question" id = "nextQnBtn2" disabled onclick="nextQuestion(1)">
+                <div class = "guideButton">
+                    <input type ="button" name="question2" value="Next Question" onclick="handleAnswer()">
                 </div>
             </div>
             <div id="qn3" class="hide">
-                <p class = "questionNumber">Question 3/10</p>
                 <p class = "question">What is the release date of the <em>upcoming</em> guardians of the galaxy movie?</p>
                 <div class = "answerButtons">
-                    <input type ="button" name="question3" value="April 28th" id = "q3Ans1" onclick="getValue(this.id)">
-                    <input type ="button" name="question3" value="May 5th" id = "q3Ans2" onclick="getValue(this.id)"> 
-                    <input type ="button" name="question3" value="June 18th" id = "q3Ans3" onclick="getValue(this.id)">
-                    <input type ="button" name="question3" value="July 8th" id = "q3Ans4" onclick="getValue(this.id)">
+                    <input type ="button" name="question3" value="April 28th" id = "q3Ans1" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question3" value="May 5th" id = "q3Ans2" onclick="getUserInput(this.id)"> 
+                    <input type ="button" name="question3" value="June 18th" id = "q3Ans3" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question3" value="July 8th" id = "q3Ans4" onclick="getUserInput(this.id)">
                 </div>
-                <div class = "guideButtons">
-                    <input type ="button" name="question3" value="Confirm Answer" id = "confirmBtn3" onclick="confirmAns(this.id, 2)">
-                    <input type ="button" name="question3" value="Next Question" id = "nextQnBtn3" disabled onclick="nextQuestion(2)">
+                <div class = "guideButton">
+                    <input type ="button" name="question3" value="Next Question" onclick="handleAnswer()">
                 </div>
             </div>
             <div id="qn4" class="hide">
-                <p class = "questionNumber">Question 4/10</p>
                 <p class = "question">Where will the <em>2023 cricket world cup</em> be held?</p>
                 <div class = "answerButtons">
-                    <input type ="button" name="question4" value="Australia" id = "q4Ans1" onclick="getValue(this.id)">
-                    <input type ="button" name="question4" value="Sri Lanka" id = "q4Ans2" onclick="getValue(this.id)"> 
-                    <input type ="button" name="question4" value="India" id = "q4Ans3" onclick="getValue(this.id)">
-                    <input type ="button" name="question4" value="England" id = "q4Ans4" onclick="getValue(this.id)">
+                    <input type ="button" name="question4" value="Australia" id = "q4Ans1" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question4" value="Sri Lanka" id = "q4Ans2" onclick="getUserInput(this.id)"> 
+                    <input type ="button" name="question4" value="India" id = "q4Ans3" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question4" value="England" id = "q4Ans4" onclick="getUserInput(this.id)">
                 </div>
-                <div class = "guideButtons">
-                    <input type ="button" name="question4" value="Confirm Answer" id = "confirmBtn4" onclick="confirmAns(this.id, 3)">
-                    <input type ="button" name="question4" value="Next Question" id = "nextQnBtn4" disabled onclick="nextQuestion(3)">
+                <div class = "guideButton">
+                    <input type ="button" name="question4" value="Next Question" onclick="handleAnswer()">
                 </div>
             </div>
             <div id="qn5" class="hide">
-                <p class = "questionNumber">Question 5/10</p>
                 <p class = "question">Which of the following are <em>ongoing</em> tours?</p>
                 <div class = "answerButtons">
-                    <input type ="button" name="question5" value="The Divide Tour" id = "q5Ans1" onclick="getValue(this.id)">
-                    <input type ="button" name="question5" value="Shawn Mendes: The Tour" id = "q5Ans2" onclick="getValue(this.id)"> 
-                    <input type ="button" name="question5" value="The Purpose Tour" id = "q5Ans3" onclick="getValue(this.id)">
-                    <input type ="button" name="question5" value="The Eras Tour" id = "q5Ans4" onclick="getValue(this.id)">
+                    <input type ="button" name="question5" value="The Divide Tour" id = "q5Ans1" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question5" value="Shawn Mendes: The Tour" id = "q5Ans2" onclick="getUserInput(this.id)"> 
+                    <input type ="button" name="question5" value="The Purpose Tour" id = "q5Ans3" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question5" value="The Eras Tour" id = "q5Ans4" onclick="getUserInput(this.id)">
                 </div>
-                <div class = "guideButtons">
-                    <input type ="button" name="question5" value="Confirm Answer" id = "confirmBtn5" onclick="confirmAns(this.id, 4)">
-                    <input type ="button" name="question5" value="Next Question" id = "nextQnBtn5" disabled onclick="nextQuestion(4)">
+                <div class = "guideButton">
+                    <input type ="button" name="question5" value="Next Question" onclick="handleAnswer()">
                 </div>
             </div>    
             <div id="qn6" class="hide">
-                <p class = "questionNumber">Question 6/10</p>
                 <p class = "question">what is the release date of the <em>upcoming</em> mission impossible movie?</p>
                 <div class = "answerButtons">
-                    <input type ="button" name="question6" value="July 14th" id = "q6Ans1" onclick="getValue(this.id)">
-                    <input type ="button" name="question6" value="August 10th" id = "q6Ans2" onclick="getValue(this.id)"> 
-                    <input type ="button" name="question6" value="August 28th" id = "q6Ans3" onclick="getValue(this.id)">
-                    <input type ="button" name="question6" value="September 8th" id = "q6Ans4" onclick="getValue(this.id)">
+                    <input type ="button" name="question6" value="July 14th" id = "q6Ans1" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question6" value="August 10th" id = "q6Ans2" onclick="getUserInput(this.id)"> 
+                    <input type ="button" name="question6" value="August 28th" id = "q6Ans3" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question6" value="September 8th" id = "q6Ans4" onclick="getUserInput(this.id)">
                 </div>
-                <div class = "guideButtons">
-                    <input type ="button" name="question6" value="Confirm Answer" id = "confirmBtn6" onclick="confirmAns(this.id, 5)">
-                    <input type ="button" name="question6" value="Next Question" id = "nextQnBtn6" disabled onclick="nextQuestion(5)">
+                <div class = "guideButton">
+                    <input type ="button" name="question6" value="Next Question" onclick="handleAnswer()">
                 </div>
             </div>  
             <div id="qn7" class="hide">
-                <p class = "questionNumber">Question 7/10</p>
                 <p class = "question">Which country will host the <em>Expo 2023</em>?</p>
                 <div class = "answerButtons">
-                    <input type ="button" name="question7" value="Australia" id = "q7Ans1" onclick="getValue(this.id)">
-                    <input type ="button" name="question7" value="UAE" id = "q7Ans2" onclick="getValue(this.id)"> 
-                    <input type ="button" name="question7" value="Qatar" id = "q7Ans3" onclick="getValue(this.id)">
-                    <input type ="button" name="question7" value="Germany" id = "q7Ans4" onclick="getValue(this.id)">
+                    <input type ="button" name="question7" value="Australia" id = "q7Ans1" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question7" value="UAE" id = "q7Ans2" onclick="getUserInput(this.id)"> 
+                    <input type ="button" name="question7" value="Qatar" id = "q7Ans3" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question7" value="Germany" id = "q7Ans4" onclick="getUserInput(this.id)">
                 </div>
-                <div class = "guideButtons">
-                    <input type ="button" name="question7" value="Confirm Answer" id = "confirmBtn7" onclick="confirmAns(this.id, 6)">
-                    <input type ="button" name="question7" value="Next Question" id = "nextQnBtn7" disabled onclick="nextQuestion(6)">
+                <div class = "guideButton">
+                    <input type ="button" name="question7" value="Next Question" onclick="handleAnswer()">
                 </div>
             </div>
             <div id="qn8" class="hide">
-                <p class = "questionNumber">Question 8/10</p>
-                <p class = "question">To celebrate how many years since <em>Picasso's death</em>, is the "Picasso celebration" being held for?</p>
+                <p class = "question">To celebrate how many years since his death, is the <em>Picasso celebration</em> being held for?</p>
                 <div class = "answerButtons">
-                    <input type ="button" name="question8" value="80" id = "q8Ans1" onclick="getValue(this.id)">
-                    <input type ="button" name="question8" value="48" id = "q8Ans2" onclick="getValue(this.id)"> 
-                    <input type ="button" name="question8" value="52" id = "q8Ans3" onclick="getValue(this.id)">
-                    <input type ="button" name="question8" value="50" id = "q8Ans4" onclick="getValue(this.id)">
+                    <input type ="button" name="question8" value="80" id = "q8Ans1" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question8" value="48" id = "q8Ans2" onclick="getUserInput(this.id)"> 
+                    <input type ="button" name="question8" value="52" id = "q8Ans3" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question8" value="50" id = "q8Ans4" onclick="getUserInput(this.id)">
                 </div>
-                <div class = "guideButtons">
-                    <input type ="button" name="question8" value="Confirm Answer" id = "confirmBtn8" onclick="confirmAns(this.id, 7)">
-                    <input type ="button" name="question8" value="Next Question" id = "nextQnBtn8" disabled onclick="nextQuestion(7)">
+                <div class = "guideButton">
+                    <input type ="button" name="question8" value="Next Question" onclick="handleAnswer()">
                 </div>
             </div>
             <div id="qn9" class="hide">
-                <p class = "questionNumber">Question 9/10</p>
                 <p class = "question">What is the release date of the <em>Spider-man: Across the Spider-Verse</em>?</p>
                 <div class = "answerButtons">
-                    <input type ="button" name="question9" value="May 7th" id = "q9Ans1" onclick="getValue(this.id)">
-                    <input type ="button" name="question9" value="June 2nd" id = "q9Ans2" onclick="getValue(this.id)"> 
-                    <input type ="button" name="question9" value="July 19th" id = "q9Ans3" onclick="getValue(this.id)">
-                    <input type ="button" name="question9" value="August 9th" id = "q9Ans4" onclick="getValue(this.id)">
+                    <input type ="button" name="question9" value="May 7th" id = "q9Ans1" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question9" value="June 2nd" id = "q9Ans2" onclick="getUserInput(this.id)"> 
+                    <input type ="button" name="question9" value="July 19th" id = "q9Ans3" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question9" value="August 9th" id = "q9Ans4" onclick="getUserInput(this.id)">
                 </div>
-                <div class = "guideButtons">
-                    <input type ="button" name="question9" value="Confirm Answer" id = "confirmBtn9" onclick="confirmAns(this.id, 8)">
-                    <input type ="button" name="question9" value="Next Question" id = "nextQnBtn9" disabled onclick="nextQuestion(8)">
+                <div class = "guideButton">
+                    <input type ="button" name="question9" value="Next Question" onclick="handleAnswer()">
                 </div>
             </div>
             <div id="qn10" class="hide">
-                <p class = "questionNumber">Question 10/10</p>
                 <p class = "question">How many shows does Taylor Swift's ongoing Eras tour have?</p>
                 <div class = "answerButtons">
-                    <input type ="button" name="question10" value="52" id = "q10Ans1" onclick="getValue(this.id)">
-                    <input type ="button" name="question10" value="48" id = "q10Ans2" onclick="getValue(this.id)"> 
-                    <input type ="button" name="question10" value="60" id = "q10Ans3" onclick="getValue(this.id)">
-                    <input type ="button" name="question10" value="78" id = "q10Ans4" onclick="getValue(this.id)">
+                    <input type ="button" name="question10" value="52" id = "q10Ans1" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question10" value="48" id = "q10Ans2" onclick="getUserInput(this.id)"> 
+                    <input type ="button" name="question10" value="60" id = "q10Ans3" onclick="getUserInput(this.id)">
+                    <input type ="button" name="question10" value="78" id = "q10Ans4" onclick="getUserInput(this.id)">
                 </div>
-                <div class = "guideButtons">
-                    <input type ="button" name="question10" value="Confirm Answer" id = "confirmBtn10" onclick="confirmAns(this.id, 9)">
-                    <input type ="button" name="question10" value="Submit Quiz" id = "nextQnBtn10" disabled onclick="nextQuestion(9)">
+                <div class = "guideButton">
+                    <input type ="button" name="question10" value="Next Question" onclick="handleAnswer()">
                 </div>
             </div>      
         </div>
