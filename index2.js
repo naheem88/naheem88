@@ -4,43 +4,96 @@
  * IIT Student Number: 20210627
  */
 
-const qnIDArray = ["qn1", "qn2", "qn3", "qn4", "qn5", "qn6", "qn7", "qn8", "qn9", "qn10"];
-const correctAnsID = ["q1Ans1", "q2Ans2", "q3Ans2", "q4Ans3", "q5Ans4", "q6Ans1", "q7Ans3", "q8Ans4", "q9Ans2", "q10Ans1"];
-const nextqnBtnIDArray = ["nextQnBtn1", "nextQnBtn2", "nextQnBtn3", "nextQnBtn4", "nextQnBtn5", "nextQnBtn6", "nextQnBtn7", "nextQnBtn8", "nextQnBtn9", "nextQnBtn10"];
-const questionBackgroundImages = [];
-questionBackgroundImages[0] = "url(Images/footballImage.jpg)";
-questionBackgroundImages[1] = "url(Images/cinemaImage.jpg)";
-questionBackgroundImages[2] = "url(Images/cricketImage.jpg)";
-questionBackgroundImages[3] = "url(Images/concertImage2.jpg)";
-questionBackgroundImages[4] = "url(Images/cinemaImage2.jpg)";
-questionBackgroundImages[5] = "url(Images/expoImage.jpg)";
-questionBackgroundImages[6] = "url(Images/artImage.jpg)";
-questionBackgroundImages[7] = "url(Images/cinemaImage3.jpg)";
-questionBackgroundImages[8] = "url(Images/concertImage3.jpg)";
+// Contains information of each question
+const questionsInfo = [
+    {
+        qnIDArray: "qn1",
+        correctAnsID: "q1Ans1",
+        questBackgroundImg: "url(Images/concertImage.jpg)",
+    },
+    {
+        qnIDArray: "qn2",
+        correctAnsID: "q2Ans2",
+        questBackgroundImg: "url(Images/footballImage.jpg)",
+    },
+    {
+        qnIDArray: "qn3",
+        correctAnsID: "q3Ans2",
+        questBackgroundImg: "url(Images/cinemaImage.jpg)",
+    },
+    {
+        qnIDArray: "qn4",
+        correctAnsID: "q4Ans3",
+        questBackgroundImg: "url(Images/cricketImage.jpg)",
+    },
+    {
+        qnIDArray: "qn5",
+        correctAnsID: "q5Ans4",
+        questBackgroundImg: "url(Images/concertImage2.jpg)",
+    },
+    {
+        qnIDArray: "qn6",
+        correctAnsID: "q6Ans1",
+        questBackgroundImg: "url(Images/cinemaImage2.jpg)",
+    },
+    {
+        qnIDArray: "qn7",
+        correctAnsID: "q7Ans3",
+        questBackgroundImg: "url(Images/expoImage.jpg)",
+    },
+    {
+        qnIDArray: "qn8",
+        correctAnsID: "q8Ans4",
+        questBackgroundImg: "url(Images/artImage.jpg)",
+    },
+    {
+        qnIDArray: "qn9",
+        correctAnsID: "q9Ans2",
+        questBackgroundImg: "url(Images/cinemaImage3.jpg)",
+    },
+    {
+        qnIDArray: "qn10",
+        correctAnsID: "q10Ans1",
+        questBackgroundImg: "url(Images/concertImage3.jpg)",
+    },
+]
 
+// Initializing variables
 let scoreCount = 0;
 let userAnsID = "";
 let timer;
+let randNum;
 let timerCountDown;
 let timeTaken;
 let countDown = 119;
+let questNum = 1;
 
+// Initializing Constants
 const score = document.getElementById("score");
 const showTimeID = document.getElementById("timer");
 const timeTakenID = document.getElementById("timeTaken");
+const questNumID = document.getElementById("questionNumber");
 
+// This function starts the quiz 
 function startQuiz() {
+    // Updates the timer which is displayed
     timerCountDown = setInterval(function () {
         timerFunction()
     }, 1000);
     document.getElementById("instructions").style.display = "none";
     document.getElementById("questions").classList.add("show");
+    // Selects the first question
+    questNumID.innerText = questNum;
+    randNum = getRandNum();
+    showQuestion(randNum);
+    // Starts the timer
     timer = setTimeout( function() {
         alert("Time's up!")
         getFinalRemarks()
     }, 120000);
 }
 
+// This function adjusts the coutdown which is displayed
 function timerFunction() {
     if (countDown !== 0) {
         if (countDown === 1) {
@@ -57,34 +110,59 @@ function timerFunction() {
     timeTaken = 120 - countDown;
 }
 
-function getValue(selectedAnsID) {
+// This function saves the user's answer
+function getUserInput(selectedAnsID) {
     userAnsID = selectedAnsID;
 }
 
-function confirmAns(confirmBtnID, questionNumber) {
-    if (userAnsID === correctAnsID[questionNumber]) {
+// This function generates a random number
+function getRandNum() {
+    let randNumber = Math.floor(Math.random() * (questionsInfo.length - 1));
+    return randNumber;
+}
+
+// This function gets the last index of an array
+function getLastIndexofArray(array) {
+    arrayLastIndex = array.length - 1
+    return arrayLastIndex;
+}
+
+// This function displays the questions
+function showQuestion(randomNumber) {
+    lastArryIdx = getLastIndexofArray(questionsInfo);
+    questNumID.innerText = questNum;
+    let tempVar = questionsInfo[randomNumber];
+    questionsInfo[randomNumber] = questionsInfo[lastArryIdx];
+    questionsInfo[lastArryIdx] = tempVar;
+    document.getElementById(questionsInfo[lastArryIdx].qnIDArray).classList.add("show");
+    document.getElementById("questions").style.backgroundImage = questionsInfo[questionsInfo.length - 1].questBackgroundImg;
+    questNum++;
+}
+
+// This function validates user answer, hides the current question and gets the next question
+function handleAnswer() {
+    let arryLastIndx = getLastIndexofArray(questionsInfo);
+    if (userAnsID === questionsInfo[arryLastIndx].correctAnsID) {
         scoreCount++;
     } else if (userAnsID === "") {
         alert("No option has been selected");
     } else {
         document.getElementById(userAnsID).style.backgroundColor = "red";
     }
-    document.getElementById(correctAnsID[questionNumber]).style.backgroundColor = "darkgreen";
-    document.getElementById(nextqnBtnIDArray[questionNumber]).disabled = false;
-    document.getElementById(confirmBtnID).disabled = true;
-    userAnsID = ""
-}
-
-function nextQuestion(questionNumber) {
-    if (qnIDArray[questionNumber] === "qn10") {
+    document.getElementById(questionsInfo[arryLastIndx].correctAnsID).style.backgroundColor = "darkgreen";
+    if (questNum === 11) {
         getFinalRemarks()
     } else {
-        document.getElementById(qnIDArray[questionNumber]).style.display = "none";
-        document.getElementById(qnIDArray[questionNumber + 1]).classList.add("show");
-        document.getElementById("questions").style.backgroundImage = questionBackgroundImages[questionNumber];
+        setTimeout( function() {
+            document.getElementById(questionsInfo[arryLastIndx].qnIDArray).style.display = "none";
+            questionsInfo.pop();
+            randNum = getRandNum();
+            showQuestion(randNum);
+        }, 2000);
     }
 }
 
+// This function displays the user's statistics
 function getFinalRemarks() {
     document.getElementById("questions").style.display = "none";
     document.getElementById("timer").style.display = "none";
