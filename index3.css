@@ -2,220 +2,247 @@
 UoW Number: w1953854
 IIT Student Number: 20210627*/
 
-* {
-    margin: 0%;
-    margin-top: 0.8%;
-    padding: 0%;
-    box-sizing: border-box;
-}
-
 body {
-    background-color: rgb(7, 48, 98);
-    font-family: "Montserrat", sans-serif;
-    text-align: center;
-    color: black;
+  background-color: black;
+  text-align: center;
+  color: black;
 }
 
 #instructionsHeading {
-    text-align: center;
-    font-size: 1.2rem;
+  text-align: center;
+  font-size: 1.8rem;
 }
 
 .questionNumber {
-    text-align: left;
-    padding-inline-start: 0.4rem;
+  text-align: left;
+  padding-inline-start: 0.4rem;
 }
 
-#timer, .questionNumber, .question {
-    color: rgb(194, 194, 30);
-    font-weight: bolder;
+#timer,
+.questionNumber,
+.question {
+  color: rgb(194, 194, 30);
+  font-weight: bolder;
 }
 
-.timerIcon {
-    width: 1.4rem;
-    height: 1.4rem;
+#developerInfo {
+  margin-top: 2rem;
 }
 
 #closeIcon {
-    margin: 0.1rem 1rem 1rem 5.2rem;
-    position: absolute;
-    width: 1.4rem;
-    height: 1.4rem;
-    float: right;
+  width: 1.4rem;
+  height: 1.4rem;
+  float: right;
 }
 
 .question {
-    border: 1px solid white;
-    border-radius: 1rem;
+  border: 1px solid white;
+  border-radius: 1rem;
+  padding: 0.8rem;
 }
 
-#qn8 .question, #qn9 .question {
-    color:white;
+#qn4 .question,
+#qn8 .question,
+#qn9 .question,
+#qn10 .question {
+  color: white;
 }
 
 #timer {
-    float: right;
+  float: right;
 }
 
 div#instructions {
-    display: grid;
-    text-align: left;
-    line-height: 2rem;
-    font-size: 0.7rem;
-    min-width: 19.4rem;
-    max-width: 36rem;
-    min-height: 26rem;
-    max-height: 24rem;
+  display: grid;
+  text-align: left;
+  line-height: 2.4rem;
+  font-size: 0.9rem;
+  min-width: 19.4rem;
+  max-width: 36rem;
+  height: 26rem;
+  padding: 1rem;
 }
 
-div#instructions, #questions, div#userResults {
-    background-color: rgb(12, 173, 226);
-    border-radius: 1rem;
-    padding: 1rem;
-    border: 1px solid white;
-    margin: 2rem 1rem 1rem 1rem;
-    box-shadow: 10px 10px 10px 5px rgb(0, 0, 0, 0.6);
+div#instructions,
+#questions,
+div#userResults {
+  background-color: rgb(142, 130, 127);
+  border-radius: 1rem;
+  border: 1px solid white;
+  margin: 12rem auto 12rem auto;
 }
 
-div#questions, #userResults {
-    gap: 1rem;
-    line-height: 2rem;
-    min-height: 28rem;
+div#instructions,
+#questions {
+  line-height: 2.8rem;
+}
+
+div#questions,
+#userResults {
+  gap: 1rem;
+  line-height: 2rem;
+  min-height: 28rem;
 }
 
 div#questions {
-    max-width: 44rem;
-    font-size: 0.7rem;
-    font-weight: bold;
+  max-width: 44rem;
+  font-size: 0.9rem;
+  font-weight: bolder;
+  padding: 1rem;
 }
 
 div#userResults {
-    width: 21rem;
-    padding: 2rem;
-    margin: auto;
-    margin-top: 4rem;
+  width: 21rem;
+  padding: 2rem;
+  color: white;
 }
 
 #result {
-    margin-top: 2.8rem;
+  margin-top: 2.8rem;
 }
 
-#sadEmoji, #smileyEmoji, #starEmoji {
-    width: 10rem;
-    height: 10rem;
-    margin: auto;
-    margin-top: 1rem;
-    display: none;
-}
-
-.answerButtons {
-    border: 1px solid white;
-    border-radius: 1rem;
-    gap: 2rem;
-    height: 10rem;
+#sadEmoji,
+#smileyEmoji,
+#starEmoji {
+  width: 10rem;
+  height: 10rem;
+  margin: auto;
+  margin-top: 1rem;
+  display: none;
+  fill: rgb(255, 183, 0);
 }
 
 .answerButtons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 0.4rem;
-    padding: 1rem;
-    gap: 1.1rem;
-    min-width: 8.9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid white;
+  border-radius: 1rem;
+  height: 10rem;
+  margin-top: 1.2rem;
+  padding: 1rem;
+  gap: 1.1rem;
+  min-width: 8.9rem;
+  font-size: 4rem;
 }
 
 .answerButtons input {
-    background-color: rgb(95, 158, 160, 0.7);
-    border: 1px solid white;
-    border-radius: 0.8rem;
-    width: auto;
-    max-width: 19rem;
-    color: white;
+  background-color: rgb(2, 114, 120);
+  border: 1px solid white;
+  border-radius: 0.8rem;
+  width: auto;
+  max-width: 19rem;
+  color: white;
+  font-size: 1.4rem;
 }
 
 #startBtn {
-    background-color: rgb(7, 48, 98);
-    border: 1px solid white;
-    border-radius: 0.8rem;
-    color: white;
-    min-width: 18rem;
-    padding: 0.2rem;
-    height: 3rem;
+  background-color: rgb(38, 47, 53);
+  border: 1px solid white;
+  border-radius: 0.8rem;
+  color: white;
+  min-width: 18rem;
+  padding: 0.2rem;
+  height: 3rem;
 }
 
 .guideButton input {
-    border: 1px solid white;
-    border-radius: 0.8rem;
-    color: white;
-    margin-top: 2rem;
-    background-color: rgb(7, 48, 98);
-    height: 4rem;
-    min-width: 18rem;
-    width: auto;
+  border: 1px solid white;
+  border-radius: 0.8rem;
+  color: white;
+  margin-top: 2.8rem;
+  background-color: rgb(38, 47, 53);
+  height: 4rem;
+  min-width: 18rem;
+  width: auto;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .show {
-    display: block;
+  display: block;
 }
 
 .setTextColorToGold {
-    color: gold;
+  color: rgb(225, 192, 30);
 }
 
 .setTextColorToRed {
-    color: red;
+  color: red;
 }
 
 .setTextColorToGreen {
-    color: darkgreen;
+  color: darkgreen;
 }
 
-.setTextColorToGold, .setTextColorToRed, .setTextColorToGreen {
-    font-size: 1rem;
+.setTextColorToGold,
+.setTextColorToRed,
+.setTextColorToGreen {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 input:hover {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 input:focus {
-    background-color:  rgb(85, 85, 196, 0.8);
+  background-color: rgb(85, 85, 196, 0.8);
 }
 
-@media only screen and (min-width: 402px) {
-    .answerButtons {
-        height: 10rem;
-    }
-
-    div#instructions {
-        display: grid;
-        line-height: 2.4rem;
-        font-size: 0.9rem;
-    }
-
-    div#questions {
-        font-size: 0.9rem;
-    }
-
-    #instructionsHeading {
-        font-size: 1.8rem;
-    }
-
-    .setTextColorToGold, .setTextColorToRed, .setTextColorToGreen {
-        font-size: 1.2rem;
-    }
+.footer {
+  margin: 0rem;
+  text-align: left;
 }
 
-@media only screen and (min-width: 720px) {  
-    div#instructions, div#questions, div#userResults {
-        margin: 2rem auto auto auto;
-    }
+@media only screen and (max-width: 740px) {
+  div#instructions, #questions  {
+    margin: 10rem 2rem 10rem 2rem;
+  }
+}
 
-    div#instructions, div#questions {
-        line-height: 2.8rem;
-    }
+@media only screen and (max-width: 640px) {
+  div#instructions,
+  #questions {
+    line-height: 2.4rem;
+    padding: 1rem;
+  }
+
+  div#instructions {
+    line-height: 2.4rem;
+  }
+
+  .answerButtons input {
+    font-size: 1rem;
+  }
+
+  #qn5 .answerButtons input {
+    font-size: 0.7rem;
+  }
+
+  .guideButton input {
+    margin-top: 2rem;
+  }
+
+  div#userResults {
+    margin: 10rem auto 10rem auto;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  div#instructions, div#questions {
+    line-height: 1.8rem;
+    font-size: 0.7rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  div#questions {
+    font-size: 0.8rem;
+  }
+
+  #instructionsHeading {
+    font-size: 1.2rem;
+  }
 }
