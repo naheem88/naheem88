@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300;500;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href = "index3.css"/>
+    <link rel="stylesheet" href = "./Styles/external.css"/>
+    <link rel="stylesheet" href = "./Styles/quiz.css"/>
     <title>Quiz</title>
 </head>
 <body>
     <main>
-        <p>Nav bar</p>
-        <hr>
+        <nav class="navbar">
+            <h1 class="logo"><a href="#">Ticketary</a></h1>
+            <ul class="nav-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li class="active"><a href="./quiz.html">Quiz</a></li>
+              <li><a href="#">Sitemap</a></li>
+              <li><a href="#">Feedback</a></li>
+              <li><a href="./aboutUs.html">About us</a></li>
+            </ul>
+            <a href="#"><img src="./svg/shop.svg" alt="Shop" class="shop-btn"></a>
+            <img src="./svg/bar_3.svg" alt="Menu" class="menu-btn"/>
+          </nav>
         <div id = "instructions">
             <p id = "instructionsHeading"><strong>INSTRUCTIONS</strong></p>
-            <p>1. Once press <strong>NEXT QUESTION</strong> your answer cannot be changed.</p>
-            <p>2. You have <strong>2 minutes</strong> to complete this quiz.</p>
+            <p>1. You have <strong>2 minutes</strong> to complete this quiz.</p>
+            <p>2. If you quit during the quiz, all your progress will be lost</p>
             <p>3. <strong class = "setTextColorToGreen">GREEN </strong> means the answer is <strong>right</strong> while <strong class = "setTextColorToRed">RED</strong> means <strong>wrong</strong>.</p>
             <p>4. Most importantly, remember to have <strong>fun!</strong></p>
             <input type="button" name="startButton" value="Start Quiz" id = "startBtn" onclick="startQuiz()">
@@ -34,7 +43,7 @@
                     <input type ="button" name="question1" value="ZAYN" id = "q1Ans4" onclick="getUserInput(this.id)">
                 </div>    
                 <div class = "guideButton"> 
-                    <input type ="button" name="question1" value="Next Question" onclick="handleAnswer()">
+                    <input type ="button" name="question1" value="Next Question" id = "qn1NxtBtn" onclick="handleAnswer(this.id)">
                 </div>
             </div>
             <div id="qn2" class="hide">
@@ -46,7 +55,7 @@
                     <input type ="button" name="question2" value="Qatar" id = "q2Ans4" onclick="getUserInput(this.id)">
                 </div>
                 <div class = "guideButton">
-                    <input type ="button" name="question2" value="Next Question" onclick="handleAnswer()">
+                    <input type ="button" name="question2" value="Next Question" id = "qn2NxtBtn" onclick="handleAnswer(this.id)">
                 </div>
             </div>
             <div id="qn3" class="hide">
@@ -58,7 +67,7 @@
                     <input type ="button" name="question3" value="July 8th" id = "q3Ans4" onclick="getUserInput(this.id)">
                 </div>
                 <div class = "guideButton">
-                    <input type ="button" name="question3" value="Next Question" onclick="handleAnswer()">
+                    <input type ="button" name="question3" value="Next Question" id = "qn3NxtBtn" onclick="handleAnswer(this.id)">
                 </div>
             </div>
             <div id="qn4" class="hide">
@@ -70,7 +79,7 @@
                     <input type ="button" name="question4" value="England" id = "q4Ans4" onclick="getUserInput(this.id)">
                 </div>
                 <div class = "guideButton">
-                    <input type ="button" name="question4" value="Next Question" onclick="handleAnswer()">
+                    <input type ="button" name="question4" value="Next Question" id = "qn4NxtBtn" onclick="handleAnswer(this.id)">
                 </div>
             </div>
             <div id="qn5" class="hide">
@@ -82,7 +91,7 @@
                     <input type ="button" name="question5" value="The Eras Tour" id = "q5Ans4" onclick="getUserInput(this.id)">
                 </div>
                 <div class = "guideButton">
-                    <input type ="button" name="question5" value="Next Question" onclick="handleAnswer()">
+                    <input type ="button" name="question5" value="Next Question" id = "qn5NxtBtn" onclick="handleAnswer(this.id)">
                 </div>
             </div>    
             <div id="qn6" class="hide">
@@ -94,7 +103,7 @@
                     <input type ="button" name="question6" value="September 8th" id = "q6Ans4" onclick="getUserInput(this.id)">
                 </div>
                 <div class = "guideButton">
-                    <input type ="button" name="question6" value="Next Question" onclick="handleAnswer()">
+                    <input type ="button" name="question6" value="Next Question" id = "qn6NxtBtn" onclick="handleAnswer(this.id)">
                 </div>
             </div>  
             <div id="qn7" class="hide">
@@ -106,7 +115,7 @@
                     <input type ="button" name="question7" value="Germany" id = "q7Ans4" onclick="getUserInput(this.id)">
                 </div>
                 <div class = "guideButton">
-                    <input type ="button" name="question7" value="Next Question" onclick="handleAnswer()">
+                    <input type ="button" name="question7" value="Next Question" id = "qn7NxtBtn" onclick="handleAnswer(this.id)">
                 </div>
             </div>
             <div id="qn8" class="hide">
@@ -118,7 +127,7 @@
                     <input type ="button" name="question8" value="50" id = "q8Ans4" onclick="getUserInput(this.id)">
                 </div>
                 <div class = "guideButton">
-                    <input type ="button" name="question8" value="Next Question" onclick="handleAnswer()">
+                    <input type ="button" name="question8" value="Next Question" id = "qn8NxtBtn" onclick="handleAnswer(this.id)">
                 </div>
             </div>
             <div id="qn9" class="hide">
@@ -130,7 +139,7 @@
                     <input type ="button" name="question9" value="August 9th" id = "q9Ans4" onclick="getUserInput(this.id)">
                 </div>
                 <div class = "guideButton">
-                    <input type ="button" name="question9" value="Next Question" onclick="handleAnswer()">
+                    <input type ="button" name="question9" value="Next Question" id = "qn9NxtBtn" onclick="handleAnswer(this.id)">
                 </div>
             </div>
             <div id="qn10" class="hide">
@@ -142,30 +151,72 @@
                     <input type ="button" name="question10" value="78" id = "q10Ans4" onclick="getUserInput(this.id)">
                 </div>
                 <div class = "guideButton">
-                    <input type ="button" name="question10" value="Next Question" onclick="handleAnswer()">
+                    <input type ="button" name="question10" value="Next Question" id = "qn10NxtBtn" onclick="handleAnswer(this.id)">
                 </div>
             </div>      
         </div>
         <div id = "userResults" class = "hide">
-            <p class = "finalResults">Final Results <a href = "https://naheem88.github.io/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white" id="closeIcon">
-                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-              </svg></a>
-            </p>
+            <p class = "finalResults">Final Results <a href = "#"><img src = "./svg/closeIcon.svg" alt = "Close Icon" id="closeIcon"></a></p>
             <hr>
             <p id = "timeTaken"></p>
             <p id = "score"></p>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="white" id="sadEmoji">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id = "sadEmoji"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM159.3 388.7c-2.6 8.4-11.6 13.2-20 10.5s-13.2-11.6-10.5-20C145.2 326.1 196.3 288 256 288s110.8 38.1 127.3 91.3c2.6 8.4-2.1 17.4-10.5 20s-17.4-2.1-20-10.5C340.5 349.4 302.1 320 256 320s-84.5 29.4-96.7 68.7zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="white" id="smileyEmoji">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id = "smileyEmoji"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM164.1 325.5C182 346.2 212.6 368 256 368s74-21.8 91.9-42.5c5.8-6.7 15.9-7.4 22.6-1.6s7.4 15.9 1.6 22.6C349.8 372.1 311.1 400 256 400s-93.8-27.9-116.1-53.5c-5.8-6.7-5.1-16.8 1.6-22.6s16.8-5.1 22.6 1.6zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="gold" viewBox="0 0 24 24" stroke-width="1" stroke="white" id="starEmoji">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" id="starEmoji"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/>
             </svg>
+
             <p id="result"></p>
         </div>
+        <section class="footer">
+            <div class="footer-row">
+              <div class="footer-col">
+                <h3>Links <div class="underline"></div></h3>
+                <ul>
+                  <li><a href="">Home</a></li>
+                  <li><a href="#">Gallery</a></li>
+                  <li><a href="./quiz.html">Quiz</a></li>
+                  <li><a href="#">Sitemap</a></li>
+                  <li><a href="#">Feedback</a></li>
+                  <li><a href="./aboutUs.html">About us</a></li>
+                  <li><a href="#">Shop</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h3>Office <div class="underline"></div></h3>
+                <p>4039 Sand Fork Road</p>
+                <p>Plymouth</p>
+                <p>Indiana</p>
+                <a href="mailto:sithulimalwana@gmail.com" class="email-id">example@gmail.com</a>
+                <h5>+94 - 012345678</h5>
+              </div>
+              
+              <div class="footer-col">
+                <h3>Newsletter <div class="underline"></div></h3>
+                <form name="newsletter" method="post">
+                  <img class="mail" src="./svg/mail.svg" alt="mail-icon">
+                  <input type="email" placeholder="enter your e-mail id" required>
+                  <button type="submit"><img class="arrow" src="./svg/arrow.svg" alt="arrow-icon"></button>
+                </form>
+                <div class="socials">
+                  <a href="#"><img src="./Images/facebook.png" alt="facebook"></a>
+                  <a href="#"><img src="./Images/instagram.png" alt="instagram"></a>
+                  <a href="#"><img src="./Images/twitter.png" alt="twitter"></a>
+                </div>
+              </div>
+              <div class="page-editor">
+                <a href="./pageEditor.html"><img src="./svg/document.svg" alt="page-editor"></a>
+              </div>
+            </div>
+            <hr>
+            <p class="hr">&#169; 2023 All Rights Reserved</p>
+          </section>
     </main>
 </body>
-<script src = "index2.js"></script>
+<script src = "./Scripts/quiz.js"></script>
+<script src= "./Scripts/navBar.js"></script>
 </html>
