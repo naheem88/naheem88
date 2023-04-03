@@ -9,52 +9,52 @@ const questionsInfo = [
     {
         qnIDArray: "qn1",
         correctAnsID: "q1Ans1",
-        questBackgroundImg: "url(Images/concertImage.jpg)",
+        questBackgroundImg: "url(../1953854/Images/concertImage.jpg)",
     },
     {
         qnIDArray: "qn2",
         correctAnsID: "q2Ans2",
-        questBackgroundImg: "url(Images/footballImage.jpg)",
+        questBackgroundImg: "url(../1953854/Images/footballImage.jpg)",
     },
     {
         qnIDArray: "qn3",
         correctAnsID: "q3Ans2",
-        questBackgroundImg: "url(Images/cinemaImage.jpg)",
+        questBackgroundImg: "url(../1953854/Images/cinemaImage.jpg)",
     },
     {
         qnIDArray: "qn4",
         correctAnsID: "q4Ans3",
-        questBackgroundImg: "url(Images/cricketImage.jpg)",
+        questBackgroundImg: "url(../1953854/Images/cricketImage.jpg)",
     },
     {
         qnIDArray: "qn5",
         correctAnsID: "q5Ans4",
-        questBackgroundImg: "url(Images/concertImage2.jpg)",
+        questBackgroundImg: "url(../1953854/Images/concertImage2.jpg)",
     },
     {
         qnIDArray: "qn6",
         correctAnsID: "q6Ans1",
-        questBackgroundImg: "url(Images/cinemaImage2.jpg)",
+        questBackgroundImg: "url(../1953854/Images/cinemaImage2.jpg)",
     },
     {
         qnIDArray: "qn7",
         correctAnsID: "q7Ans3",
-        questBackgroundImg: "url(Images/expoImage.jpg)",
+        questBackgroundImg: "url(../1953854/Images/expoImage.jpg)",
     },
     {
         qnIDArray: "qn8",
         correctAnsID: "q8Ans4",
-        questBackgroundImg: "url(Images/artImage.jpg)",
+        questBackgroundImg: "url(../1953854/Images/artImage.jpg)",
     },
     {
         qnIDArray: "qn9",
         correctAnsID: "q9Ans2",
-        questBackgroundImg: "url(Images/cinemaImage3.jpg)",
+        questBackgroundImg: "url(../1953854/Images/cinemaImage3.jpg)",
     },
     {
         qnIDArray: "qn10",
         correctAnsID: "q10Ans1",
-        questBackgroundImg: "url(Images/concertImage3.jpg)",
+        questBackgroundImg: "url(../1953854/Images/concertImage3.jpg)",
     },
 ]
 
@@ -67,6 +67,7 @@ let timerCountDown;
 let timeTaken;
 let countDown = 119;
 let questNum = 1;
+let lastArryIdx = 0;
 
 // Initializing Constants
 const score = document.getElementById("score");
@@ -93,17 +94,17 @@ function startQuiz() {
     }, 120000);
 }
 
-// This function adjusts the coutdown which is displayed
+// This function displays the coutdown 
 function timerFunction() {
     if (countDown !== 0) {
         if (countDown === 1) {
-            showTimeID.innerHTML = countDown + " second left";
+            showTimeID.innerHTML = countDown + " sec left";
         } else if (countDown > 60 && countDown !== 61) {
-            showTimeID.innerHTML = "1 minute and " + (countDown - 60) + " seconds left";
+            showTimeID.innerHTML = "1 min and " + (countDown - 60) + " secs left";
         } else if (countDown === 61) {
-            showTimeID.innerHTML = "1 minute and " + (countDown - 60) + " second left";
+            showTimeID.innerHTML = "1 min and " + (countDown - 60) + " sec left";
         } else {
-            showTimeID.innerHTML = countDown + " seconds left";
+            showTimeID.innerHTML = countDown + " secs left";
         }
         countDown = countDown - 1;
     }
@@ -135,27 +136,29 @@ function showQuestion(randomNumber) {
     questionsInfo[randomNumber] = questionsInfo[lastArryIdx];
     questionsInfo[lastArryIdx] = tempVar;
     document.getElementById(questionsInfo[lastArryIdx].qnIDArray).classList.add("show");
-    document.getElementById("questions").style.backgroundImage = questionsInfo[questionsInfo.length - 1].questBackgroundImg;
+    document.getElementById("questions").style.backgroundImage = questionsInfo[lastArryIdx].questBackgroundImg;
     questNum++;
 }
 
 // This function validates user answer, hides the current question and gets the next question
-function handleAnswer() {
-    let arryLastIndx = getLastIndexofArray(questionsInfo);
-    if (userAnsID === questionsInfo[arryLastIndx].correctAnsID) {
+function handleAnswer(qnID) {
+    lastArryIdx = getLastIndexofArray(questionsInfo);
+    if (userAnsID === questionsInfo[lastArryIdx].correctAnsID) {
         scoreCount++;
     } else if (userAnsID === "") {
         alert("No option has been selected");
     } else {
         document.getElementById(userAnsID).style.backgroundColor = "red";
     }
-    document.getElementById(questionsInfo[arryLastIndx].correctAnsID).style.backgroundColor = "darkgreen";
+    document.getElementById(questionsInfo[lastArryIdx].correctAnsID).style.backgroundColor = "darkgreen";
     if (questNum === 11) {
         getFinalRemarks()
     } else {
-        setTimeout( function() {
-            document.getElementById(questionsInfo[arryLastIndx].qnIDArray).style.display = "none";
+        document.getElementById(qnID).disabled = true;
+        setTimeout(function() {
+            document.getElementById(questionsInfo[lastArryIdx].qnIDArray).style.display = "none";
             questionsInfo.pop();
+            userAnsID = ""
             randNum = getRandNum();
             showQuestion(randNum);
         }, 2000);
