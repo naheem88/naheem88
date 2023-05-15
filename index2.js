@@ -9,7 +9,7 @@ const questionsInfo = [
     {
         qnIDArray: "qn1",
         correctAnsID: "q1Ans1",
-        questBackgroundImg: "url(../1953854/Images/concertImage.jpg)",
+        questBackgroundImg: "url(../Images/concertImage.jpg)",
     },
     {
         qnIDArray: "qn2",
