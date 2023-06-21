@@ -9,52 +9,52 @@ const questionsInfo = [
     {
         qnIDArray: "qn1",
         correctAnsID: "q1Ans1",
-        questBackgroundImg: "url(../1953854/Images/concertImage.jpg)",
+        questBackgroundImg: "url(./Images/concertImage.jpg)",
     },
     {
         qnIDArray: "qn2",
         correctAnsID: "q2Ans2",
-        questBackgroundImg: "url(../1953854/Images/footballImage.jpg)",
+        questBackgroundImg: "url(./Images/footballImage.jpg)",
     },
     {
         qnIDArray: "qn3",
         correctAnsID: "q3Ans2",
-        questBackgroundImg: "url(../1953854/Images/cinemaImage.jpg)",
+        questBackgroundImg: "url(./Images/cinemaImage.jpg)",
     },
     {
         qnIDArray: "qn4",
         correctAnsID: "q4Ans3",
-        questBackgroundImg: "url(../1953854/Images/cricketImage.jpg)",
+        questBackgroundImg: "url(./Images/cricketImage.jpg)",
     },
     {
         qnIDArray: "qn5",
         correctAnsID: "q5Ans4",
-        questBackgroundImg: "url(../1953854/Images/concertImage2.jpg)",
+        questBackgroundImg: "url(./Images/concertImage2.jpg)",
     },
     {
         qnIDArray: "qn6",
         correctAnsID: "q6Ans1",
-        questBackgroundImg: "url(../1953854/Images/cinemaImage2.jpg)",
+        questBackgroundImg: "url(./Images/cinemaImage2.jpg)",
     },
     {
         qnIDArray: "qn7",
         correctAnsID: "q7Ans3",
-        questBackgroundImg: "url(../1953854/Images/expoImage.jpg)",
+        questBackgroundImg: "url(./Images/expoImage.jpg)",
     },
     {
         qnIDArray: "qn8",
         correctAnsID: "q8Ans4",
-        questBackgroundImg: "url(../1953854/Images/artImage.jpg)",
+        questBackgroundImg: "url(./Images/artImage.jpg)",
     },
     {
         qnIDArray: "qn9",
         correctAnsID: "q9Ans2",
-        questBackgroundImg: "url(../1953854/Images/cinemaImage3.jpg)",
+        questBackgroundImg: "url(./Images/cinemaImage3.jpg)",
     },
     {
         qnIDArray: "qn10",
         correctAnsID: "q10Ans1",
-        questBackgroundImg: "url(../1953854/Images/concertImage3.jpg)",
+        questBackgroundImg: "url(./Images/concertImage3.jpg)",
     },
 ]
 
